@@ -24,7 +24,7 @@ const FilterDropdown = ({label, options, onChange, defVal, style}) => {
             </WrapSelector>
             <OptionsWrapper>
                 <Options style={{display: isOpen ? 'block' : 'none'}}>
-                    {options && options.length > 0 ? options.map((item, index) => {
+                    {options && options.length > 0 ? (options||[]).map((item, index) => {
                             return <Item
                                         key={index}
                                         to={`/country/${item.value}`}

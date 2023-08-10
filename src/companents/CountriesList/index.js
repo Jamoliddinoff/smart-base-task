@@ -23,7 +23,7 @@ const CountriesList = () => {
                 </Text>
             </TitleWrapper>
             <CardsWrapper>
-                {countries.map(item=>(
+                {(countries||[]).map(item=>(
                     <CardItem key={item.id}>
                         <ImageWrapper><img  alt={item.capital} src={item.mainPic} title={'Image'}/></ImageWrapper>
                         <div  className={'justify-between'} style={{margin:'25px 0px'}}>

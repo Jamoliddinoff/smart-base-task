@@ -30,13 +30,13 @@ const Navbar = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const {width} = useScreenSize()
     const countries = useSelector(store => store.lang.countries)
-        .map(item =>{
-            return {
-                value: item.id,
-                label: `${item.country}, ${item.capital}`
-             }
-        })
 
+   const countriesList = (countries||[]).map(item =>{
+       return {
+           value: item.id,
+           label: `${item.country}, ${item.capital}`
+       }
+   })
 
     const handleLang = (item) => {
         localStorage.setItem('lang',JSON.stringify(item.code))
@@ -76,7 +76,7 @@ const Navbar = () => {
                     <Text color={'#000'}>{languageItem.name}</Text>
                     <div style={{marginTop:5}} ><DowArrow/></div>
                     {languageModal ? <LanguageList>
-                        {languagesList.map(item=>(
+                        {(languagesList||[]).map(item=>(
                             <div
                                 key={item.id}
                                 style={{background: item.id === languageItem.id && '#f6f6f6'}}

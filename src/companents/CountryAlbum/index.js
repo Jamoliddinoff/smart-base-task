@@ -21,7 +21,7 @@ const CountryAlbum = ({images}) => {
                 </div>
                 <CardWrapper>
                     {
-                        images.map(item=>(
+                        (images||[]).map(item=>(
                             <CardItem key={item.id} onClick={()=>{
                                 setHandlePicture(item);
                                 setFullMode(true);
