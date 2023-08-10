@@ -45,7 +45,7 @@ const Navbar = () => {
         setLanguageItem(item);
         setLanguageModal(false);
     }
-    const filteredItems = countries.filter(item =>
+    const filteredItems = countriesList.filter(item =>
         item.label.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
