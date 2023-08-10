@@ -11,14 +11,14 @@ const FullMode = ({show,handlePicture,closeMode,images}) => {
     },[handlePicture])
 
     const handleLeftArrow = () =>{
-        const index = images.findIndex(item => item.id === image.id);
+        const index = (images||[]).findIndex(item => item.id === image.id);
         images[index-1] && setImage(images[index-1]);
         if(index === 0) {
             setImage(images[images.length - 1])
         }
     }
     const handleRightArrow = () =>{
-        const index = images.findIndex(item => item.id === image.id);
+        const index = (images||[]).findIndex(item => item.id === image.id);
         images[index+1] && setImage(images[index+1]);
         if(index === images.length - 1) {
             setImage(images[0])
