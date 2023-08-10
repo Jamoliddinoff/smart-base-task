@@ -29,7 +29,7 @@ const Navbar = () => {
     const [languageItem,setLanguageItem] =  useState(initialLang?initialLang:languagesList[0])
     const [searchTerm, setSearchTerm] = useState('');
     const {width} = useScreenSize()
-    const countries = useSelector(store => store.lang.countries)
+    const countries = useSelector(store => store?.lang?.countries)
 
    const countriesList = (countries||[]).map(item =>{
        return {

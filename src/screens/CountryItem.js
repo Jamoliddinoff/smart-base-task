@@ -10,7 +10,7 @@ import {useSelector} from "react-redux";
 
 const CountryItem = () => {
     const params = useParams();
-    const countries = useSelector(store => store.lang.countries);
+    const countries = useSelector(store => store?.lang?.countries);
 
     const country = countries[params?.id-1]
     return (

@@ -11,10 +11,11 @@ import {useSelector} from "react-redux";
 import useScreenSize from "../../hooks/useScreenSize";
 
 const CountriesList = () => {
-    const countries = useSelector(store => store.lang.countries);
+    const countries = useSelector(store => store?.lang?.countries);
     const {t} =useTranslation();
     const {width} = useScreenSize();
 
+    console.log('countries---------',countries,useSelector(store=>store));
     return (
         <Container>
             <TitleWrapper style={{marginBottom:24}}>

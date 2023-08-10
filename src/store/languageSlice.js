@@ -3,14 +3,14 @@ import {countries, countriesEn, countriesRu} from "../mocData";
 
 const getLang = JSON.parse(localStorage.getItem('lang'));
 const getDefaultCountries = () => {
-    if (getLang === "uz"){
-        return countries
-    }
     if (getLang === "ru"){
         return countriesRu
     }
     if (getLang === "en"){
         return countriesEn
+    }
+    else {
+        return countries
     }
 }
 const initialState = {
